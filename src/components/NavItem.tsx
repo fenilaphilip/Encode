@@ -3,13 +3,18 @@ import React from "react";
 type NavItemProps = {
   id: number;
   name: string;
-  link: string;
 };
 
 const NavItem: React.FC<{ navItem: NavItemProps }> = (props) => {
   return (
     <li key={props.navItem.id}>
-      <a href={props.navItem.link}>{props.navItem.name}</a>
+      <a>
+        <button
+        //  onClick={() => handleClick(props.navItem.name)}
+        >
+          {props.navItem.name}
+        </button>
+      </a>
     </li>
   );
 };

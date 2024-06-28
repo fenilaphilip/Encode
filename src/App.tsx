@@ -1,5 +1,5 @@
 import Navbar from "./components/Navbar.tsx";
-import Input from "./components/UI/Input.tsx";
+import Encode from "./components/Encode.tsx";
 import EncodeContextProvider from "./store/EncodeContext.tsx";
 
 function App() {
@@ -7,7 +7,7 @@ function App() {
     <EncodeContextProvider>
       <Navbar />
       <main>
-        <Input />
+        <Encode />
       </main>
     </EncodeContextProvider>
   );
