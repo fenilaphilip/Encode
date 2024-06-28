@@ -1,16 +1,15 @@
-import Navbar from './components/Navbar.tsx';
+import Navbar from "./components/Navbar.tsx";
+import Input from "./components/UI/Input.tsx";
 
 function App() {
-  
   return (
     <>
-     <Navbar />
+      <Navbar />
       <main>
-
+        <Input />
       </main>
- 
     </>
-  )
+  );
 }
 
-export default App
+export default App;
