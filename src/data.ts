@@ -1,4 +1,4 @@
-interface navbarItem {
+export interface Item {
     id: number,
     name: string,
     heading: string,
@@ -6,7 +6,7 @@ interface navbarItem {
 }
 
 
-export const navbarItem = [{
+export const Items: Array<Item> = [{
     id: 1,
     name: 'URL',
     heading: 'URL Encode',
