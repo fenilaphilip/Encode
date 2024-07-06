@@ -1,13 +1,12 @@
-import React, { useState } from "react";
 import Button from "./Button.tsx";
 
 const Input: React.FC<{
   btnName: string;
+  enteredText: string;
+  setEnteredText: (text: string) => void;
   showResult: (text: string) => void;
   setView: (text: boolean) => void;
-}> = ({ btnName, showResult, setView }) => {
-  const [enteredText, setEnteredText] = useState("");
-
+}> = ({ btnName, enteredText, setEnteredText, showResult, setView }) => {
   let userEnteredText: string;
   function handleChange(text: string) {
     userEnteredText = text;

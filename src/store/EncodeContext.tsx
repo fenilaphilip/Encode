@@ -6,6 +6,8 @@ import { Buffer } from "buffer";
 type encodeContextInterface = {
   encoder: Item;
   showTab: (text: string) => void;
+  userText: string;
+  setUserText: (text: string) => void;
   showResult: (text: string) => void;
   result: string;
   viewResult: boolean;
@@ -15,11 +17,14 @@ export const EncodeContext = createContext({} as encodeContextInterface);
 
 const EncodeContextProvider: React.FC<{ children: any }> = (props) => {
   const [currentEncoder, setCurrentEncoder] = useState(Items[0]);
+  const [enteredText, setEnteredText] = useState("");
   const [result, setResult] = useState("");
   const [viewResult, setViewResult] = useState(false);
 
   function showTab(text: string) {
     setViewResult(false);
+    setEnteredText("");
+
     if (text === "URL") {
       setCurrentEncoder(Items[0]);
     } else if (text === "Base 64") {
@@ -44,6 +49,8 @@ const EncodeContextProvider: React.FC<{ children: any }> = (props) => {
   const contextValue: encodeContextInterface = {
     encoder: currentEncoder,
     showTab,
+    userText: enteredText,
+    setUserText: setEnteredText,
     showResult,
     result,
     viewResult,

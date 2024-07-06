@@ -14,6 +14,8 @@ export default function Encode() {
         btnName={btnCalled}
         showResult={EncodeCtx.showResult}
         setView={EncodeCtx.setViewResult}
+        enteredText={EncodeCtx.userText}
+        setEnteredText={EncodeCtx.setUserText}
       />
       {EncodeCtx.viewResult && <Result result={EncodeCtx.result} />}
     </>
