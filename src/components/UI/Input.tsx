@@ -1,22 +1,17 @@
 import Button from "./Button.tsx";
-
+import { useState } from "react";
 const Input: React.FC<{
   btnName: string;
-  enteredText: string;
-  setEnteredText: (text: string) => void;
-  showResult: (text: string) => void;
-  setView: (text: boolean) => void;
-}> = ({ btnName, enteredText, setEnteredText, showResult, setView }) => {
-  let userEnteredText: string;
+  inputConsumer: (text: string) => void;
+}> = ({ btnName, inputConsumer }) => {
+  const [enteredText, setEnteredText] = useState("");
+
   function handleChange(text: string) {
-    userEnteredText = text;
-    setEnteredText(userEnteredText);
-    setView(false);
+    setEnteredText(text);
   }
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = (event) => {
     event.preventDefault();
-    showResult(enteredText);
-    setView(true);
+    inputConsumer(enteredText);
   };
   return (
     <form className="user-input" onSubmit={handleSubmit}>
