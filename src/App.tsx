@@ -1,4 +1,4 @@
-import Navbar from "./components/Navbar.tsx";
+import Navbar from "./components/navbar/Navbar.tsx";
 import Encode from "./components/Encode.tsx";
 import EncodeContextProvider from "./store/EncodeContext.tsx";
 

@@ -1,5 +1,5 @@
 import NavItem from "./NavItem.tsx";
-import { Items } from "../data.ts";
+import { Items } from "../../data.ts";
 
 export default function Navbar() {
   return (

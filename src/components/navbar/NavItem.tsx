@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { EncodeContext } from "../store/EncodeContext.tsx";
+import { EncodeContext } from "../../store/EncodeContext.tsx";
 
 type NavItemProps = {
   id: number;
