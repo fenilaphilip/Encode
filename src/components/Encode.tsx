@@ -1,10 +1,9 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import Input from "./UI/Input.tsx";
 import { EncodeContext } from "../store/EncodeContext.tsx";
 import Result from "./Result.tsx";
 
 export default function Encode() {
-  const [viewResult, setViewResult] = useState(false);
   const EncodeCtx = useContext(EncodeContext);
   const btnCalled = "Convert to " + EncodeCtx.encoder.name;
   return (
@@ -14,9 +13,9 @@ export default function Encode() {
       <Input
         btnName={btnCalled}
         showResult={EncodeCtx.showResult}
-        setView={setViewResult}
+        setView={EncodeCtx.setViewResult}
       />
-      {viewResult && <Result result={EncodeCtx.result} />}
+      {EncodeCtx.viewResult && <Result result={EncodeCtx.result} />}
     </>
   );
 }
