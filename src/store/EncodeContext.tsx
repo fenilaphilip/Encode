@@ -5,9 +5,7 @@ import { Items, Item } from "../data.ts";
 type encodeContextInterface = {
   encoder: Item;
   showTab: (text: string) => void;
-  displayUrl: (text: string) => void;
-  displayBase: (text: string) => void;
-  displayQRCode: (text: string) => void;
+  showResult: (text: string) => void;
 };
 export const EncodeContext = createContext({} as encodeContextInterface);
 
@@ -15,7 +13,6 @@ const EncodeContextProvider: React.FC<{ children: any }> = (props) => {
   const [currentEncoder, setCurrentEncoder] = useState(Items[0]);
 
   function showTab(text: string) {
-    console.log(text);
     if (text === "URL") {
       setCurrentEncoder(Items[0]);
     } else if (text === "Base 64") {
@@ -25,22 +22,14 @@ const EncodeContextProvider: React.FC<{ children: any }> = (props) => {
     }
   }
 
-  function displayUrl(text: string) {
-    console.log(text);
-  }
-  function displayBase(text: string) {
-    console.log(text);
-  }
-  function displayQRCode(text: string) {
+  function showResult(text: string) {
     console.log(text);
   }
 
   const contextValue: encodeContextInterface = {
     encoder: currentEncoder,
     showTab,
-    displayUrl,
-    displayBase,
-    displayQRCode,
+    showResult,
   };
 
   return (
