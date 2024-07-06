@@ -4,17 +4,20 @@ import Button from "./Button.tsx";
 const Input: React.FC<{
   btnName: string;
   showResult: (text: string) => void;
-}> = ({ btnName, showResult }) => {
+  setView: (text: boolean) => void;
+}> = ({ btnName, showResult, setView }) => {
   const [enteredText, setEnteredText] = useState("");
 
   let userEnteredText: string;
   function handleChange(text: string) {
     userEnteredText = text;
     setEnteredText(userEnteredText);
+    setView(false);
   }
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = (event) => {
     event.preventDefault();
     showResult(enteredText);
+    setView(true);
   };
   return (
     <form className="user-input" onSubmit={handleSubmit}>

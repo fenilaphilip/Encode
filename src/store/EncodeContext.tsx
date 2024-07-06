@@ -6,11 +6,13 @@ type encodeContextInterface = {
   encoder: Item;
   showTab: (text: string) => void;
   showResult: (text: string) => void;
+  result: string;
 };
 export const EncodeContext = createContext({} as encodeContextInterface);
 
 const EncodeContextProvider: React.FC<{ children: any }> = (props) => {
   const [currentEncoder, setCurrentEncoder] = useState(Items[0]);
+  const [result, setResult] = useState("");
 
   function showTab(text: string) {
     if (text === "URL") {
@@ -23,13 +25,19 @@ const EncodeContextProvider: React.FC<{ children: any }> = (props) => {
   }
 
   function showResult(text: string) {
-    console.log(text);
+    let displayResult = "";
+    if (currentEncoder === Items[0]) {
+      displayResult = encodeURIComponent(text);
+      console.log(displayResult);
+    }
+    setResult(displayResult);
   }
 
   const contextValue: encodeContextInterface = {
     encoder: currentEncoder,
     showTab,
     showResult,
+    result,
   };
 
   return (
