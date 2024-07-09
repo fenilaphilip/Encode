@@ -18,7 +18,7 @@ const QrEncoder: React.FC = () => {
         for a locator, an identifier, and for web-tracking.
       </p>
       <Input btnName="Generate QR Code" inputConsumer={inputConsumer} />
-      <Result result={result} />
+      {result && <Result result={result} />}
     </>
   );
 };

@@ -14,7 +14,7 @@ const Input: React.FC<{
     inputConsumer(enteredText);
   };
   return (
-    <form className="user-input" onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit}>
       <label htmlFor="user-text">Enter Text</label>
       <input
         value={enteredText}
