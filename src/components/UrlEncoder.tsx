@@ -23,7 +23,11 @@ const UrlEncoder: React.FC = () => {
           </div>
         </div>
 
+<<<<<<< HEAD
         <div className="bg-blue-300 container rounded-lg p-4 border-solid border-4 border-cyan-700 lg:w-9/12 sm:w-full ">
+=======
+        <div className="bg-blue-300 container rounded-lg p-4 border-solid border-4 border-cyan-700  ">
+>>>>>>> cc35c651cbb88516b7f8742446b69d6e7fa876c9
           <h2 className="text-lg text-cyan-700">What is Url Encoding?</h2>
           <p className="">
             URL encoding, officially known as percent-encoding, is a method to
