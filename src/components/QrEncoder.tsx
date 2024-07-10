@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Input from "./UI/Input.tsx";
-import Result from "./UI/Result.tsx";
+import QRCode from "react-qr-code";
 
 const QrEncoder: React.FC = () => {
   const [result, setResult] = useState("");
@@ -14,9 +14,9 @@ const QrEncoder: React.FC = () => {
         <h1 className="flex justify-center text-xl">QR Code</h1>
         <div className="container py-4">
           <Input btnName="Generate QR Code" inputConsumer={inputConsumer} />
-          {result && <h2 className="px-4">Encoded Text:</h2>}
-          <div className="text-center">
-            <Result result={result} />
+          {result && <h2 className="px-4">QR Code:</h2>}
+          <div className="flex m-2 justify-center">
+            {result && <QRCode value={result} />}
           </div>
         </div>
         <div className="bg-blue-300 container rounded-lg p-4 border-solid border-4 border-cyan-700 lg:w-9/12 sm:w-full">
