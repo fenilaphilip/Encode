@@ -1,12 +1,17 @@
 import { useState } from "react";
 import Input from "./UI/Input.tsx";
 import Result from "./UI/Result.tsx";
+import History from "./UI/History.tsx";
 
 const UrlEncoder: React.FC = () => {
   const [result, setResult] = useState("");
   const inputConsumer = (input: string) => {
     setResult(encodeURIComponent(input));
   };
+  const handleViewButtonClick = () => {
+    console.log("I got clicked.");
+  };
+
   return (
     <>
       <div className="mx-auto max-w-7xl px-2 py-4 sm:px-6 lg:px-8 bg-slate-200">
@@ -18,14 +23,21 @@ const UrlEncoder: React.FC = () => {
           />
 
           {result && <h2 className="px-4">Encoded Text:</h2>}
-          <div className="text-center">
+          <div className="text-center font-bold text-xl">
             <Result result={result} />
           </div>
         </div>
-
+        <button
+          type="button"
+          onClick={handleViewButtonClick}
+          className="text-white bg-gray-800 hover:bg-gray-400 hover:text-black focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"
+        >
+          View Old Encoded Texts
+        </button>
+        <History />
         <div className="bg-blue-300 container rounded-lg p-4 border-solid border-4 border-cyan-700 lg:w-9/12 sm:w-full ">
           <h2 className="text-lg text-cyan-700">What is Url Encoding?</h2>
-          <p className="">
+          <p>
             URL encoding, officially known as percent-encoding, is a method to
             encode arbitrary data in a uniform resource identifier (URI) using
             only the US-ASCII characters legal within a URI. It is also used in

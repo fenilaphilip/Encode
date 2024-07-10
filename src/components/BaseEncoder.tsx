@@ -16,13 +16,13 @@ const BaseEncoder: React.FC = () => {
           <Input btnName="Convert to Base 64" inputConsumer={inputConsumer} />
 
           {result && <h2 className="px-4">Encoded Text:</h2>}
-          <div className="text-center">
+          <div className="text-center font-bold text-xl">
             <Result result={result} />
           </div>
         </div>
-        <div className="bg-blue-300 container rounded-lg p-4 border-solid border-4 border-cyan-700  ">
+        <div className="bg-blue-300 container rounded-lg p-4 border-solid border-4 border-cyan-700 lg:w-9/12 sm:w-full ">
           <h2 className="text-lg text-cyan-700">What is Base 64 Encoding?</h2>
-          <p className="">
+          <p>
             Base64 is a group of binary-to-text encoding schemes that transforms
             binary data into a sequence of printable characters, limited to a
             set of 64 unique characters.Base64 is also widely used for sending
