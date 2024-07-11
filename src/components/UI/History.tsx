@@ -1,7 +1,11 @@
-const History: React.FC = () => {
+const History: React.FC<{ history: string[] }> = ({ history }) => {
   return (
     <>
-      <h2>Hello</h2>
+      <ul>
+        {history.map((text) => {
+          return <li>{text}</li>;
+        })}
+      </ul>
     </>
   );
 };
