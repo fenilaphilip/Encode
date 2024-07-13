@@ -1,5 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import { createContext, useState } from "react";
+import { createContext, ReactNode, useState } from "react";
 import { Items, Item } from "../data.ts";
 
 type encodeContextInterface = {
@@ -8,7 +7,7 @@ type encodeContextInterface = {
 };
 export const EncodeContext = createContext({} as encodeContextInterface);
 
-const EncodeContextProvider: React.FC<{ children: any }> = (props) => {
+const EncodeContextProvider: React.FC<{ children: ReactNode }> = (props) => {
   const [currentEncoder, setCurrentEncoder] = useState(Items[0]);
 
   function showTab(text: string) {
