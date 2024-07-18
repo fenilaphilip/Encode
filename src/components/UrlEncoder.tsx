@@ -19,7 +19,7 @@ const UrlEncoder: React.FC = () => {
 
   return (
     <div className="mx-auto max-w-7xl px-2 py-4 sm:px-6 lg:px-8 bg-slate-200">
-      <h1 className="flex justify-center text-xl">URL Encode</h1>
+      <h1 className="flex justify-center text-3xl p-4 m-3">URL Encode</h1>
       <div className="grid grid-flow-row-dense grid-cols-3 grid-rows-1">
         <div className="lg:col-span-2 sm:col-span-full">
           <Input btnName="Convert to URL Encode" inputConsumer={setInputText} />
@@ -29,7 +29,6 @@ const UrlEncoder: React.FC = () => {
               userInput={inputText}
             />
           )}
-
           <Button type="button" onClick={handleViewButtonClick}>
             {displayHistory ? "Hide " : "View "} Old Encoded Texts
           </Button>

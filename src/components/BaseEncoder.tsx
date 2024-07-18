@@ -27,8 +27,8 @@ const BaseEncoder: React.FC = () => {
   return (
     <>
       <div className="mx-auto max-w-7xl px-2 py-4 sm:px-6 lg:px-8 bg-slate-200">
-        <h1 className="flex justify-center text-xl">Base 64 Encode</h1>
-        <div className="grid grid-flow-row-dense grid-cols-3 grid-rows-1">
+        <h1 className="flex justify-center text-3xl p-4 m-3">Base 64 Encode</h1>
+        <div className="grid grid-flow-row-dense grid-cols-3 grid-rows-1 ">
           <div className="lg:col-span-2 sm:col-span-full">
             <Input btnName="Convert to Base 64" inputConsumer={inputConsumer} />
             {result && <Result result={result} userInput={inputText} />}
