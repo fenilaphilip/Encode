@@ -13,6 +13,7 @@ const Input: React.FC<{
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = (event) => {
     event.preventDefault();
     inputConsumer(enteredText);
+    setEnteredText("");
   };
   return (
     <form onSubmit={handleSubmit} className="flex">

@@ -8,7 +8,7 @@ import History from "./UI/History.tsx";
 
 const BaseEncoder: React.FC = () => {
   const [result, setResult] = useState("");
-  const [inputText, setInputText] = useState<string>();
+  const [inputText, setInputText] = useState<string>("");
   const [displayHistory, setDisplayHistory] = useState(false);
 
   const inputConsumer = (input: string) => {
@@ -31,7 +31,7 @@ const BaseEncoder: React.FC = () => {
         <div className="grid grid-flow-row-dense grid-cols-3 grid-rows-1">
           <div className="lg:col-span-2 sm:col-span-full">
             <Input btnName="Convert to Base 64" inputConsumer={inputConsumer} />
-            {result && <Result result={result} />}
+            {result && <Result result={result} userInput={inputText} />}
             <Button type="button" onClick={handleViewButtonClick}>
               {displayHistory ? "Hide " : "View "} Old Encoded Texts
             </Button>
