@@ -1,5 +1,6 @@
 import Button from "./Button.tsx";
 import { useState } from "react";
+
 const Input: React.FC<{
   btnName: string;
   inputConsumer: (text: string) => void;
