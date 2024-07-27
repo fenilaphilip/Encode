@@ -24,7 +24,7 @@ const QrEncoder: React.FC = () => {
   return (
     <>
       <div className="mx-auto max-w-7xl px-2 py-4 sm:px-6 lg:px-8 bg-slate-200">
-        <h1 className="flex justify-center text-3xl">QR Code</h1>
+        <h1 className="flex justify-center text-3xl p-4 m-3">QR Code</h1>
         <div className="grid grid-flow-row-dense grid-cols-3 grid-rows-1">
           <div className="lg:col-span-2 sm:col-span-full">
             <Input btnName="Generate QR Code" inputConsumer={inputConsumer} />
