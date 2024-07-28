@@ -28,33 +28,27 @@ const BaseEncoder: React.FC = () => {
     <>
       <div className="mx-auto max-w-7xl px-2 py-4 sm:px-6 lg:px-8 bg-slate-200">
         <h1 className="flex justify-center text-3xl p-4 m-3">Base 64 Encode</h1>
-        <div className="grid grid-flow-row-dense grid-cols-3 grid-rows-1 ">
-          <div className="lg:col-span-2 sm:col-span-full">
-            <Input btnName="Convert to Base 64" inputConsumer={inputConsumer} />
-            {result && <Result result={result} userInput={inputText} />}
-            <Button type="button" onClick={handleViewButtonClick}>
-              {displayHistory ? "Hide " : "View "} Old Encoded Texts
-            </Button>
-            {displayHistory && (
-              <History
-                store="BaseEncoder"
-                input={inputText}
-                showAgain={handleShowAgainText}
-              />
-            )}
-          </div>
 
-          <div className="lg:col-span-1  sm:col-span-full">
-            <InfoBox heading="What is Base 64 Encoding?">
-              Base64 is a group of binary-to-text encoding schemes that
-              transforms binary data into a sequence of printable characters,
-              limited to a set of 64 unique characters.Base64 is also widely
-              used for sending e-mail attachments, because SMTP – in its
-              original form – was designed to transport 7-bit ASCII characters
-              only.
-            </InfoBox>
-          </div>
-        </div>
+        <Input btnName="Convert to Base 64" inputConsumer={inputConsumer} />
+        {result && <Result result={result} userInput={inputText} />}
+        <Button type="button" onClick={handleViewButtonClick}>
+          {displayHistory ? "Hide " : "View "} Old Encoded Texts
+        </Button>
+        {displayHistory && (
+          <History
+            store="BaseEncoder"
+            input={inputText}
+            showAgain={handleShowAgainText}
+          />
+        )}
+
+        <InfoBox heading="What is Base 64 Encoding?">
+          Base64 is a group of binary-to-text encoding schemes that transforms
+          binary data into a sequence of printable characters, limited to a set
+          of 64 unique characters.Base64 is also widely used for sending e-mail
+          attachments, because SMTP – in its original form – was designed to
+          transport 7-bit ASCII characters only.
+        </InfoBox>
       </div>
     </>
   );
