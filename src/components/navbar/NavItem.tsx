@@ -6,20 +6,19 @@ type NavItemProps = {
   name: string;
 };
 
-const NavItem: React.FC<{ navItem: NavItemProps }> = (props) => {
+const NavItem: React.FC<{ navItem: NavItemProps; click: () => void }> = (
+  props
+) => {
   const EncodeCtx = useContext(EncodeContext);
 
   function handleClick(name: string) {
+    props.click();
     EncodeCtx.showTab(name);
   }
 
   return (
-    <li
-      key={props.navItem.id}
-      className="hover:bg-gray-400 hover:text-white'
-    ' rounded-md px-3 py-2 text-base font-medium"
-    >
-      <a>
+    <li key={props.navItem.id}>
+      <a className="md:p-4 py-2 block hover:text-blue-300" href="#">
         <button onClick={() => handleClick(props.navItem.name)}>
           {props.navItem.name}
         </button>
