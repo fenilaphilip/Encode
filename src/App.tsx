@@ -6,7 +6,7 @@ function App() {
   return (
     <EncodeContextProvider>
       <Navbar />
-      <main>
+      <main className="mainContent m-1 p-2">
         <Encode />
       </main>
     </EncodeContextProvider>
